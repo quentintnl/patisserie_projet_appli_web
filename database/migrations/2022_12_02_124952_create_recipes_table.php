@@ -20,9 +20,9 @@ return new class extends Migration
             $table->string('preparation_time', 50);
             $table->string('cooking_time', 50);
             $table->text('conservation_council');
+            $table->string('nbr_people', 50);
             $table->string('photo', 250);
             $table->timestamps();
-
         });
     }
 
