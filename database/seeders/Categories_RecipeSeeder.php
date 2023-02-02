@@ -16,7 +16,22 @@ class Categories_RecipeSeeder extends Seeder
     {
         \DB::table('categories_recipes')->insert([
             'category_id'=>'1',
-            'recipes_id'=>'1'
+            'recipe_id'=>'1',
+        ]);
+
+        \DB::table('categories_recipes')->insert([
+            'category_id'=>'2',
+            'recipe_id'=>'2',
+        ]);
+
+        \DB::table('categories_recipes')->insert([
+            'category_id'=>'3',
+            'recipe_id'=>'3',
+        ]);
+
+        \DB::table('categories_recipes')->insert([
+            'category_id'=>'4',
+            'recipe_id'=>'4',
         ]);
     }
 }

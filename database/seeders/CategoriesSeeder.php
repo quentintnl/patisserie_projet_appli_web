@@ -14,8 +14,14 @@ class CategoriesSeeder extends Seeder
      */
     public function run()
     {
-        \DB::table('categories')->insert([
-            'name'=>'chocolat'
-        ]);
+        $datas = [
+            "fruit",
+            "legume",
+            "viande",
+            "vegan"
+        ];
+        foreach($datas as $data) {
+            \DB::table('categories')->insert(['name'=>$data]);
+        }
     }
 }

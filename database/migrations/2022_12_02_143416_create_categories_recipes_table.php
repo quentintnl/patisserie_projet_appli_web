@@ -17,8 +17,8 @@ return new class extends Migration
             $table->unsignedBigInteger('category_id');
             $table->foreign('category_id')->references('id')->on('categories');
     
-            $table->unsignedBigInteger('recipes_id');
-            $table->foreign('recipes_id')->references('id')->on('recipes');
+            $table->unsignedBigInteger('recipe_id');
+            $table->foreign('recipe_id')->references('id')->on('recipes');
         });
     }
 

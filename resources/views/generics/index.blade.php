@@ -20,7 +20,7 @@
 
     <!--  gallary Section  -->
     <div id="recipes" class="text-center bg-dark text-light has-height-md middle-items wow fadeIn">
-        <a href="{{ route('showAllRecipes') }}" class="section-title">NOS RECETTES</a>
+        <a href="{{ route('recipes.show') }}" class="section-title">NOS RECETTES</a>
     </div>
     <div class="gallary row">
         <div class="col-sm-6 col-lg-3 gallary-item wow fadeIn">
@@ -50,7 +50,7 @@
     </div>
 
     <div id="categories" class="text-center bg-dark text-light has-height-md middle-items wow fadeIn">
-        <a href="{{ route('pastry_types') }}" class="section-title">TYPE DE PATISSERIE</a>
+        <a href="{{ route('pastryTypes.index') }}" class="section-title">TYPE DE PATISSERIE</a>
     </div>
     <div class="gallary row">
         <div class="col-sm-6 col-lg-3 gallary-item wow fadeIn">
@@ -80,7 +80,7 @@
     </div>
 
     <div id="events" class="text-center bg-dark text-light has-height-md middle-items wow fadeIn">
-        <a href="{{ route('events') }}" class="section-title">EVENEMENTS</a>
+        <a href="{{ route('events.index') }}" class="section-title">EVENEMENTS</a>
     </div>
     <div class="gallary row">
         <div class="col-sm-6 col-lg-3 gallary-item wow fadeIn">

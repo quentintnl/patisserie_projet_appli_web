@@ -14,8 +14,14 @@ class EventsSeeder extends Seeder
      */
     public function run()
     {
-        \DB::table('events')->insert([
-            'name'=>'Anniversaire'
-        ]);
+        $datas = [
+            "Anniversaire",
+            "noel",
+            "enterrement",
+            "paques"
+        ];
+        foreach($datas as $data) {
+            \DB::table('events')->insert(['name'=>$data]);
+        }
     }
 }

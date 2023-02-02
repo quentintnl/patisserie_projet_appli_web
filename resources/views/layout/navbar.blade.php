@@ -5,33 +5,33 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('index') }}">Accueil</a>
+                    <a class="nav-link" href="{{ route('generics.index') }}">Accueil</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('index') }}">A propos de nous</a>
+                    <a class="nav-link" href="{{ route('generics.index') }}">A propos de nous</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('showAllRecipes') }}">Recettes</a>
+                    <a class="nav-link" href="{{ route('recipes.index') }}">Recettes</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('add_recipes') }}">Ajouter une recette</a>
+                    <a class="nav-link" href="{{ route('recipes.create') }}">Ajouter une recette</a>
                 </li>
             </ul>
-            <a class="navbar-brand m-auto" href="{{ route('index') }}">
+            <a class="navbar-brand m-auto" href="{{ route('generics.index') }}">
                 <span class="brand-txt">LARLITON</span>
             </a>
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('pastry_types') }}">Type de pâtisserie</a>
+                    <a class="nav-link" href="{{ route('pastryTypes.index') }}">Type de pâtisserie</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('events') }}">Evènements</a>
+                    <a class="nav-link" href="{{ route('events.index') }}">Evènements</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="">Avis</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="">Contacter nous</a>
+                    <a class="nav-link" href="{{ route('generics.index') }}">Contacter nous</a>
                 </li>
                 <li class="nav-item">
                     <a href="" class="btn btn-primary ml-xl-4">Connexion</a>

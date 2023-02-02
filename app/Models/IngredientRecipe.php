@@ -12,7 +12,7 @@ class IngredientRecipe extends Model
     protected $table = "ingredients_recipes";
 
     protected $fillable = [
-        'weight'
+        'ingredient_id', 'recipe_id', 'weight'
     ];
 
     public function ingredient()

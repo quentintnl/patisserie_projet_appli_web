@@ -14,8 +14,14 @@ class IngredientsSeeder extends Seeder
      */
     public function run()
     {
-        \DB::table('ingredients')->insert([
-            'name'=>'Lait',
-        ]);
+        $datas = [
+            "lait",
+            "nutella",
+            "chocolat",
+            "petit pois"
+        ];
+        foreach($datas as $data) {
+            \DB::table('ingredients')->insert(['name'=>$data]);
+        }
     }
 }
