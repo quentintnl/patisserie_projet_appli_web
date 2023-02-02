@@ -4,10 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class LarlitonController extends Controller
+class GenericsController extends Controller
 {
     public function index()
     {
-        return view('index');
+        return view('generics.index');
     }
 }

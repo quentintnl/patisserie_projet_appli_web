@@ -17,8 +17,8 @@ return new class extends Migration
             $table->unsignedBigInteger('ingredient_id');
             $table->foreign('ingredient_id')->references('id')->on('ingredients');
     
-            $table->unsignedBigInteger('recipes_id');
-            $table->foreign('recipes_id')->references('id')->on('recipes');
+            $table->unsignedBigInteger('recipe_id');
+            $table->foreign('recipe_id')->references('id')->on('recipes');
 
             $table->string('weight', 25);
         });

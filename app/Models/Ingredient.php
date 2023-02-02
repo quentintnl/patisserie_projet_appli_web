@@ -5,18 +5,18 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Events extends Model
+class Ingredient extends Model
 {
     use HasFactory;
 
-    protected $table = "events";
+    protected $table = "ingredients";
 
     protected $fillable = [
         'name'
     ];
 
-    // public function add_recipes()
-    // {
-    //     return $this->belongsTo(AddRecipes::class);
-    // }
+    public function ingredientsrecipes()
+    {
+        return $this->hasMany(IngredientRecipe::class);
+    }
 }

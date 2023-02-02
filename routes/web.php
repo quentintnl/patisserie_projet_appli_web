@@ -25,16 +25,14 @@ use App\Http\Controllers\AddRecipesController;
 |
 */
 
-Route::get('/', function () {
-    return view('index');
+Route::get('/', [GenericsController::class, 'index'])->name("index");
+Route::get('/recette/{id}', [RecipesController::class, 'show'])->name("recipes.show");
+Route::get('/toutes-les-recettes', [RecipesController::class, 'index'])->name("recipes.index");
+Route::get('/types-de-patisserie', [PastryTypesController::class, 'index'])->name("pastryTypes.index");
 
-});
 
-Route::get('/larliton', [LarlitonController::class, 'index'])->name("index");
-Route::get('/recette/{id}', [ShowrecipesController::class, 'index'])->name("showRecipes");
-Route::get('/toutes-les-recettes', [ShowAllrecipesController::class, 'index'])->name("showAllRecipes");
-Route::get('/type-de-patisserie', [TypesPastryController::class, 'index'])->name("pastry_types");
-Route::get('/evenements', [EventsController::class, 'index'])->name("events");
+
+Route::get('/evenements', [EventsController::class, 'index'])->name("events.index");
 
 Route::get('/ajouter-une-recette', [AddRecipesController::class, 'create'])->name("add_recipes");
 

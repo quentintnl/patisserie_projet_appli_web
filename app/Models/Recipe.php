@@ -5,10 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-use App\Models\Events;
-use App\Models\Categories;
-
-class Recipes extends Model
+class Recipe extends Model
 {
     use HasFactory;
 
@@ -18,14 +15,8 @@ class Recipes extends Model
         'name', 'manufacturing_process', 'preparation_time', 'cooking_time', 'conservation_council', 'nbr_people','photo'
     ];
 
-    // public function add_recipes()
-    // {
-    //     return $this->hasMAny(Events::class);
-    //     return $this->hasMAny(Categories::class);
-    // }
-
     public function ingredientsrecipes()
     {
-        return $this->hasMAny(IngredientsRecipes::class);
+        return $this->hasMany(IngredientRecipe::class);
     }
 }

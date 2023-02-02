@@ -16,7 +16,7 @@ class Ingredients_RecipeSeeder extends Seeder
     {
         \DB::table('ingredients_recipes')->insert([
             'ingredient_id'=>'1',
-            'recipes_id'=>'1',
+            'recipe_id'=>'1',
             'weight'=>'40gr'
         ]);
     }
