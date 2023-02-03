@@ -19,10 +19,11 @@ class RecipesController extends Controller
         return view('recipes.index', compact("recipes"));
     }
     
-    public function show($id)
+    public function show( Request $request, $id)
     {
-        $recipeingredient = IngredientRecipe::with("recipe", "ingredient")->where('recipe_id', $id)->get();
-        return view('recipes.show', compact("recipeingredient"));
+
+        $recipeingredients = IngredientRecipe::with("recipe", "ingredient")->where('recipe_id', $id)->get();
+        return view('recipes.show', compact("recipeingredients"));
     }
 
     public function create()

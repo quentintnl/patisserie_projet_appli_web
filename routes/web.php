@@ -24,7 +24,7 @@ use App\Http\Controllers\EventsController;
 */
 
 
-Route::get('/', [GenericsController::class, 'index'])->name("generics.index");
+Route::get('/home', [GenericsController::class, 'index'])->name("generics.index");
 Route::get('/toutes-les-recettes', [RecipesController::class, 'index'])->name("recipes.index");
 Route::get('/recette/{id}', [RecipesController::class, 'show'])->name("recipes.show");
 Route::get('/types-de-patisserie', [PastryTypesController::class, 'index'])->name("pastryTypes.index");

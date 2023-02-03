@@ -10,7 +10,7 @@
     <div class="gallary row">
         <div class="col-sm-6 col-lg-3 gallary-item wow fadeIn">
             <img src="{{ asset('imgs/gallary-1.jpg') }}" alt="Tarte au pommes" class="gallary-img">
-            <a href="{{ route('recipes.show',$recipe->photo) }}" class="gallary-overlay">
+            <a href="{{ route('recipes.show',$recipe->id) }}" class="gallary-overlay">
                 <i class="gallary-icon ti-plus"></i>
             </a>
         </div>

@@ -20,7 +20,7 @@
 
     <!--  gallary Section  -->
     <div id="recipes" class="text-center bg-dark text-light has-height-md middle-items wow fadeIn">
-        <a href="{{ route('recipes.show') }}" class="section-title">NOS RECETTES</a>
+        <a href="{{ route('recipes.index') }}" class="section-title">NOS RECETTES</a>
     </div>
     <div class="gallary row">
         <div class="col-sm-6 col-lg-3 gallary-item wow fadeIn">
