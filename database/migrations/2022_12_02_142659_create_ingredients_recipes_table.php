@@ -21,6 +21,8 @@ return new class extends Migration
             $table->foreign('recipe_id')->references('id')->on('recipes');
 
             $table->string('weight', 25);
+
+            $table->timestamps();
         });
     }
 

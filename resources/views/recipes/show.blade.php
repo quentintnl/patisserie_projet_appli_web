@@ -10,6 +10,16 @@
             </p>
             <div class="row mb-5">
                 <div class="content_add_pastry">
+                    <div> 
+                        <p type="text" id="add_nbr_people" class="form-control form-control-lg custom-form-control add_nbr_people" placeholder="Nombre de personne">
+                            {{ $recipeingredient->recipe->nbr_people}}
+                        </p>
+                    </div>
+                    <div>
+                        <p type="text" id="add_preparation_time" class="form-control form-control-lg custom-form-control" placeholder="Temps de préparation">
+                            {{ $recipeingredient->recipe->preparation_time}}
+                        </p>
+                        </div>
                     <div class="ingredients_nbr_people_and_preparation_time">
                         <div class="ingredients_class">
                             <p type="text" id="ingredients" class="form-control form-control-lg custom-form-control ingredients" placeholder="Ingredients">
@@ -22,14 +32,11 @@
                                 @endforeach
                             </p>
                         </div>
-                        <div class="nbr_people_and_preparation_time">
-                            <p type="text" id="add_nbr_people" class="form-control form-control-lg custom-form-control add_nbr_people" placeholder="Nombre de personne">
-                                {{ $recipeingredient->recipe->nbr_people}}
-                            </p>
-                            <p type="text" id="add_preparation_time" class="form-control form-control-lg custom-form-control" placeholder="Temps de préparation">
-                                {{ $recipeingredient->recipe->preparation_time}}
-                            </p>                    
-                        </div>
+                        <p type="text" id="weight" name="weight" class="weight form-control form-control-lg custom-form-control margin-bottom " placeholder="Poids">
+                            @foreach($recipeingredients as $weight)
+                                {{$weight->weight}}
+                            @endforeach
+                        </p>               
                     </div>
                     <div class="">
                         <p type="text" id="add_manufacturing" class="form-control form-control-lg custom-form-control preparation" placeholder="Préparation">

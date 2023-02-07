@@ -8,7 +8,7 @@
                     <a class="nav-link" href="{{ route('generics.index') }}">Accueil</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('generics.index') }}">A propos de nous</a>
+                    <a class="nav-link" href="{{ route('ingredients.show') }}">Ingrédients</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('recipes.index') }}">Recettes</a>

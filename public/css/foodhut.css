@@ -2296,34 +2296,28 @@
   
   .preparation{
     width: 100%;
-    margin-top: 100px;
     font-size: 1.5em;
   }
   
   .add_nbr_people{
-    margin-bottom: 40px;
+    width: 100%;
   }
-  
-  .cooking_time{
-    margin-top: 100px;
-  }
-  
+
   .pictures{
     width: 400px;
-    margin-top: 100px;
   }
   
   .ingredients_class{
-    margin-right: 150px;
-  }
-  
-  .ingredients{
-    height: 200px;
+    width: 50%;
+    height: 57.6px;
+    border-radius: 10px;
+    background-color: transparent;
+    color: white;
+    text-align: center;
   }
   
   .conservation{
     width: 100%;
-    margin-top: 100px;
   }
   
   
@@ -9026,8 +9020,7 @@
   
   .ingredients_nbr_people_and_preparation_time{
     display: flex;
-    justify-content: space-around;
-    align-items: center;
+    justify-content: space-between;
   }
   
   .nbr_people_and_preparation_time{
@@ -11479,4 +11472,33 @@
   .gallary .gallary-item:hover .gallary-overlay {
     visibility: visible;
     opacity: 1;
+  }
+
+  .margin-bottom{
+    margin-bottom: 10%;
+  }
+
+  .frame-width{
+    width: 100%;
+  }
+
+  .preparation-time{
+    width: 100%;
+  }
+
+  .weight{
+    width: 40%;
+  }
+
+  .margin-top{
+    margin-top: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .ingredient-display{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
   }
