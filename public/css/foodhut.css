@@ -11491,7 +11491,7 @@
   }
 
   .margin-top{
-    margin-top: 200px;
+    margin-top: 10em;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -11502,3 +11502,114 @@
     justify-content: center;
     flex-direction: row;
   }
+
+  .display-flex{
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .width-form{
+    width: 70%;
+  }
+
+  .margin-bottom{
+    margin-bottom: 1%;
+  }
+
+  .choose-size{
+    width: 30%;
+    height: 2em;
+    border-radius: 10px;
+    font-size: 1em;
+    font-weight: 600;
+    text-align: center;
+  }
+
+  select{
+    background-color: #ff214f;
+    color: #fff;
+    border: none;
+  }
+
+  select:focus{
+    outline: none;
+    color: #ff214f;
+    background-color: #fff;
+  }
+
+  input{
+    background-color: #ff214f;
+    color: #fff;
+    border: none;
+  }
+
+  input:focus{
+    outline: none;
+    color: #ff214f;
+    background-color: #fff;
+  }
+
+  .btn-ingredient{
+    background-color: #ff214f;
+    color: #fff;
+    border: none;
+    width: 70%;
+    border-radius: 10px;
+    font-size: 1.3em;
+  }
+
+  .btn-ingredient-recipe{
+    background-color: #ff214f;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    height: auto;
+    font-size: 1.3em;
+  }
+
+  .btn-ingredient:hover{
+    outline: none;
+    color: #ff214f;
+    background-color: #fff;
+    transition: 0.4s;
+  }
+
+  .table-ingredient{
+    font-size: 2em;
+    color: #fff;
+    font-weight: 600;
+  }
+
+.ingredient-size{
+  font-size: 2em;
+  color: #fff;
+  width: 33%;
+  text-align: center;
+}
+
+.size-table{
+  width: 33%;
+  text-align: center;
+}
+
+.all-ingredient-txt{
+  margin-bottom: 1em;
+}
+
+.add-ingredients{
+  font-size: 3em;
+  margin-top: 1em;
+}
+
+.add-ingredients:hover{
+  color: #fff;
+}
+
+.position-relative-img{
+  position: relative;
+}
+
+.txt-position-absolue{
+  position: absolute;
+  text-align: center;
+}

@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\GenericsController;
 use App\Http\Controllers\RecipesController;
-use App\Http\Controllers\PastryTypesController;
+use App\Http\Controllers\CategoriesController;
 use App\Http\Controllers\EventsController;
 use App\Http\Controllers\IngredientsController;
 use App\Http\Controllers\IngredientsRecipesController;
@@ -42,8 +42,15 @@ Route::get('/ajouter-des-ingredients-a-la-recette', [RecipesController::class, '
 Route::post('/ajout-des-ingredient', [RecipesController::class, 'storeingredient'])->name("recipes.storeingredient");
 
 
-Route::get('/types-de-patisserie', [PastryTypesController::class, 'index'])->name("pastryTypes.index");
+Route::get('/types-de-patisserie', [CategoriesController::class, 'index'])->name("pastryTypes.index");
+Route::get('/categorie/{id}', [CategoriesController::class, 'show'])->name("categories.show");
+
+Route::get('/recette/{id}', [CategoriesController::class, 'showrecipe'])->name("categories.showrecipe");
+
+
 Route::get('/evenements', [EventsController::class, 'index'])->name("events.index");
+Route::get('/evenements/{id}', [EventsController::class, 'show'])->name("events.show");
+
 
 
 

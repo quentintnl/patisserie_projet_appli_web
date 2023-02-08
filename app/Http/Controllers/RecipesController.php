@@ -5,12 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Models\Recipe;
-
 use App\Models\Ingredient;
-
 use App\Models\IngredientRecipe;
-
-
 
 class RecipesController extends Controller
 {
@@ -73,17 +69,6 @@ class RecipesController extends Controller
         
         $ingredientsrecipe->recipe_id = $request->get('recipe_id');
         $ingredientsrecipe->save();
-
-        // $validatedData = $request->validate([
-        //     'ingredient_id' => 'required',
-        //     'weight' => 'required',
-        //     'recipe_id' => 'required'
-        // ]);
-    
-        // $ingredient = Ingredient::findOrFail($validatedData['ingredient_id']);
-        // $recipe = Recipe::findOrFail($validatedData['recipe_id']);
-    
-        // $recipe->ingredients()->attach($ingredient->id, ['weight' => $validatedData['weight']]);
 
         return redirect()->route ("recipes.index");
     }

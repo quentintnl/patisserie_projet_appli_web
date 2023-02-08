@@ -2,7 +2,6 @@
 
 @section('content')
 
-    <!-- book a table Section  -->
     @foreach ($recipeingredients as $recipeingredient)
     <div class="container-fluid has-bg-overlay-show-recipes-img text-center text-light has-height-lg middle-items" id="book-table">
             <p class="section-title-name-pastry mb-5">

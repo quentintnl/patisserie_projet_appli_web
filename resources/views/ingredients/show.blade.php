@@ -2,26 +2,26 @@
 
 @section('content')
 
-<div class="margin-top">
-<h2> Tous les ingrédients </h2>
-    <table>
+<div class="margin-top display-flex">
+<h2 class="all-ingredient-txt"> Tous les ingrédients </h2>
+    <table class="width-form">
         @foreach ($ingredients as $ingredient)
-            <tr>
-                <td>{{$ingredient->name}}</td>
-                <td> <a href="{{ route('ingredients.edit', $ingredient->id) }}"> Modifier</a></td>
-                <td>
+            <tr class="display-table-ingredient">
+                <td class="ingredient-size">{{$ingredient->name}}</td>
+                <td class="size-table"> <button href="{{ route('ingredients.edit', $ingredient->id) }}" class="btn-ingredient"> Modifier</button></td>
+                <td class="size-table">
                     <form action="{{ route('ingredients.destroy') }}" method="POST">
                         @method('delete')
                         @csrf
                         <input type="hidden" name="ingredient_id" value="{{ $ingredient->id }}">
-                        <button type="submit">Supprimer</button>
+                        <button class="btn-ingredient" type="submit">Supprimer</button>
                     </form>
                 </td>
             </tr>
         @endforeach
     </table>
 
-    <a href="{{ route('ingredients.create')}}">Ajouter un ingrédients</a>
+    <a class="add-ingredients" href="{{ route('ingredients.create')}}">Ajouter un ingrédient</a>
 </div>
 
 @endsection
