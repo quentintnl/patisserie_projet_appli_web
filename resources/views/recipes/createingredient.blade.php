@@ -37,13 +37,11 @@
                 var clone = select.cloneNode(true);
                 document.body.appendChild(clone);
             });
-
             document.getElementById("add-ingredient").addEventListener("click", function() {
                 var select = document.querySelector('input[name="weight"]');
                 var clone = select.cloneNode(true);
                 document.body.appendChild(clone);
             });
-
             document.getElementById("remove-ingredient").addEventListener("click", function() {
             var select = document.querySelectorAll('select[name="ingredient_id"]');
             if (select.length > 1) {
@@ -51,7 +49,6 @@
             lastSelect.parentNode.removeChild(lastSelect);
             }
             });
-
             document.getElementById("remove-ingredient").addEventListener("click", function() {
             var select = document.querySelectorAll('input[name="weight"]');
             if (select.length > 1) {
@@ -60,6 +57,5 @@
             }
             });
         </script>
-    </div>
 
 @endsection

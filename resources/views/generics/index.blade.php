@@ -50,7 +50,7 @@
     </div>
 
     <div id="categories" class="text-center bg-dark text-light has-height-md middle-items wow fadeIn">
-        <a href="{{ route('pastryTypes.index') }}" class="section-title">TYPE DE PATISSERIE</a>
+        <a href="{{ route('categories.index') }}" class="section-title">TYPE DE PATISSERIE</a>
     </div>
     <div class="gallary row">
         <div class="col-sm-6 col-lg-3 gallary-item wow fadeIn">

@@ -32,4 +32,49 @@ class CategoriesController extends Controller
         return view('recipes.show', compact("recipeingredients"));
     }
 
+    public function create()
+    {
+        return view('categories.create');
+    }
+
+    public function store(Request $request)
+    {
+        $categories = new Category;
+        $categories->name = $request->get('name');
+        $categories->save();
+
+        return redirect()->route("categories.index");
+    }
+
+    public function shownamecategories()
+    {
+        $categories = Category::all();
+
+        return view('categories.shownamecategories', compact('categories'));
+    }
+    
+    public function edit($id)
+    {
+        $category = Category::find($id);
+    
+        return view('categories.edit', compact("category"));
+    }
+    
+    public function update (Request $request, $id)
+    {
+        $category = Category::find($id);
+        $category->name = $request->get('name');
+        $category->save();
+    
+        return redirect()->route("categories.shownamecategories");
+    }
+
+    public function destroy(Request $request)
+    {
+        CategoryRecipe::where('category_id', $request->get('category_id'))->delete();
+
+        Category::destroy($request->get("category_id"));
+
+        return redirect()->route("categories.shownamecategories");
+    }
 }

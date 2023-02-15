@@ -31,28 +31,31 @@ use App\Http\Controllers\IngredientsRecipesController;
 Route::get('/', [GenericsController::class, 'index'])->name("generics.index");
 
 Route::get('/toutes-les-recettes', [RecipesController::class, 'index'])->name("recipes.index");
-Route::get('/recette/{id}', [RecipesController::class, 'show'])->name("recipes.show");
-
+Route::get('/la-recette/{id}', [RecipesController::class, 'show'])->name("recipes.show");
 Route::get('/ajouter-une-recette', [RecipesController::class, 'create'])->name("recipes.create");
 Route::post('/ajouter-une-recettte', [RecipesController::class, 'store'])->name("recipes.store");
 Route::get('/recette/{id}/edit', [RecipesController::class, 'edit'])->name("recipes.edit");
-
-
 Route::get('/ajouter-des-ingredients-a-la-recette', [RecipesController::class, 'createingredient'])->name("recipes.createingredient");
 Route::post('/ajout-des-ingredient', [RecipesController::class, 'storeingredient'])->name("recipes.storeingredient");
 
-
-Route::get('/types-de-patisserie', [CategoriesController::class, 'index'])->name("pastryTypes.index");
+Route::get('/types-de-patisserie', [CategoriesController::class, 'index'])->name("categories.index");
 Route::get('/categorie/{id}', [CategoriesController::class, 'show'])->name("categories.show");
-
 Route::get('/recette/{id}', [CategoriesController::class, 'showrecipe'])->name("categories.showrecipe");
-
+Route::get('/ajouter-une-categorie', [CategoriesController::class, 'create'])->name("categories.create");
+Route::post('/ajouter-la-categorie', [CategoriesController::class, 'store'])->name("categories.store");
+Route::get('/toutes-les-categories', [CategoriesController::class, 'shownamecategories'])->name("categories.shownamecategories");
+Route::delete('/toutes-les-catégories', [CategoriesController::class, 'destroy'])->name("categories.destroy");
+Route::get('/categorie{id}/edit', [CategoriesController::class, 'edit'])->name("categories.edit");
+Route::put('/categorie/{id}', [CategoriesController::class, 'update'])->name("categories.update");
 
 Route::get('/evenements', [EventsController::class, 'index'])->name("events.index");
 Route::get('/evenements/{id}', [EventsController::class, 'show'])->name("events.show");
-
-
-
+Route::get('/ajouter-un-evenement', [EventsController::class, 'create'])->name("events.create");
+Route::post('/ajouter-l-evenement', [EventsController::class, 'store'])->name("events.store");
+Route::get('/tous-les-evenemnts', [EventsController::class, 'shownameevents'])->name("events.shownameevents");
+Route::delete('/tous-les-evenemnts', [EventsController::class, 'destroy'])->name("events.destroy");
+Route::get('/evenement{id}/edit', [EventsController::class, 'edit'])->name("events.edit");
+Route::put('/evenement/{id}', [EventsController::class, 'update'])->name("events.update");
 
 Route::get('/tous-les-ingrédients', [IngredientsController::class, 'show'])->name("ingredients.show");
 Route::get('/ajouter-un-ingredient', [IngredientsController::class, 'create'])->name("ingredients.create");

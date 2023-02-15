@@ -8,7 +8,9 @@
         @foreach ($ingredients as $ingredient)
             <tr class="display-table-ingredient">
                 <td class="ingredient-size">{{$ingredient->name}}</td>
-                <td class="size-table"> <button href="{{ route('ingredients.edit', $ingredient->id) }}" class="btn-ingredient"> Modifier</button></td>
+                <td class="size-table">
+                    <a href="{{ route('ingredients.edit', $ingredient->id) }}" class="btn-ingredient update"> Modifier</a>
+                </td>
                 <td class="size-table">
                     <form action="{{ route('ingredients.destroy') }}" method="POST">
                         @method('delete')

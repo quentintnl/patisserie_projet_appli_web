@@ -2,9 +2,9 @@
 
 @section('content')
 
-<div id="categories" class="text-center bg-dark text-light has-height-md middle-items wow fadeIn">
-    <a href="" class="section-title">Types de pâtisseries</a>
-</div>
+    <div id="categories" class="text-center bg-dark text-light has-height-md middle-items wow fadeIn">
+        <a href="" class="section-title">Types de pâtisseries</a>
+    </div>
     <div class="gallary row">
         @foreach ($categories as $category)
             <div class="col-sm-6 col-lg-3 gallary-item wow fadeIn position-relative-img">
@@ -15,6 +15,10 @@
                 </a>
             </div>
         @endforeach
+    </div>
+    <div class="add-pastry-types">
+        <a class="add-category" href="{{ route('categories.create')}}">Ajouter une catégorie</a>
+        <a href="{{ route('categories.shownamecategories') }}" class="btn-ingredient update center-btn"> Voir toutes les catégories</a>
     </div>
 
 @endsection

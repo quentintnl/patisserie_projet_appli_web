@@ -3,12 +3,14 @@
 @section('content')
 
     <div class="margin-top">
-        <h2 class="all-ingredient-txt">Modification de l'ingrédient : {{ $ingredient->name }}</h2>
-        <form action="{{ route('ingredients.update', $ingredient->id) }}" method="POST">
-            @method('PUT')
-            @csrf
-            <label for="name">Ingredient : </label>
-            <input type="text" id="name" name="name" value="{{ $ingredient->name }}">
-            <button type="submit">Modifier l'ingrédient !</button>
-        </form>
+        <h2 cclass="add-title">Modification de l'ingrédient : {{ $ingredient->name }}</h2>
+        <div class="add-class">
+            <form action="{{ route('ingredients.update', $ingredient->id) }}" method="POST">
+                @method('PUT')
+                @csrf
+                <label class="add-txt" for="name">Ingredient : </label>
+                <input class="add-input" type="text" id="name" name="name" value="{{ $ingredient->name }}">
+                <button class="add" type="submit">Modifier l'ingrédient !</button>
+            </form>
+        </div>
 @endsection

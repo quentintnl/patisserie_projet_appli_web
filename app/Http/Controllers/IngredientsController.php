@@ -30,7 +30,8 @@ class IngredientsController extends Controller
         return view('ingredients.create');
     }
 
-    public function store(Request $request){
+    public function store(Request $request)
+    {
         $ingredients = new Ingredient;
         $ingredients->name = $request->get('name');
         $ingredients->save();

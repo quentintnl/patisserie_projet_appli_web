@@ -50,6 +50,7 @@ class RecipesController extends Controller
     public function edit($id)
     {
         $ingredients = Ingredient::find($id);
+
         return view('recipe.edit', compact("ingredient"));
     }
 
@@ -57,18 +58,17 @@ class RecipesController extends Controller
     {
         $ingredients = Ingredient::all();
         $recipes = Recipe::all();
+
         return view('recipes.createingredient', compact("ingredients", "recipes"));
     }
 
     public function storeingredient(Request $request)
     {
-        $ingredientsrecipe = new IngredientRecipe;
-
-        $ingredientsrecipe->weight = $request->get('weight');
-        $ingredientsrecipe->ingredient_id = $request->get('ingredient_id');
-        
-        $ingredientsrecipe->recipe_id = $request->get('recipe_id');
-        $ingredientsrecipe->save();
+            $ingredientsrecipe = new IngredientRecipe();
+            $ingredientsrecipe->weight = $request->get('weight');
+            $ingredientsrecipe->ingredient_id = $request->get('ingredient_id');
+            $ingredientsrecipe->recipe_id = $request->get('recipe_id');
+            $ingredientsrecipe->save();
 
         return redirect()->route ("recipes.index");
     }

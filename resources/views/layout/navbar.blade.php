@@ -22,7 +22,7 @@
             </a>
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('pastryTypes.index') }}">Type de pâtisserie</a>
+                    <a class="nav-link" href="{{ route('categories.index') }}">Type de pâtisserie</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('events.index') }}">Evènements</a>
