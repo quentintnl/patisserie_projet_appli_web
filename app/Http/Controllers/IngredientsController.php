@@ -42,7 +42,6 @@ class IngredientsController extends Controller
     public function destroy(Request $request)
     {
         IngredientRecipe::where('ingredient_id', $request->get('ingredient_id'))->delete();
-
         Ingredient::destroy($request->get("ingredient_id"));
 
         return redirect()->route("ingredients.show");

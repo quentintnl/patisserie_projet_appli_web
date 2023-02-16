@@ -24,7 +24,7 @@
                             <p type="text" id="ingredients" class="form-control form-control-lg custom-form-control ingredients" placeholder="Ingredients">
                                 @foreach($recipeingredients as $ingredients)
                                     @if($ingredients)
-                                        {{ $ingredients->ingredient->name}}
+                                        {{ $ingredients->ingredient->name}}<br>
                                     @else
                                         <p>Ingrédient non disponible</p>
                                     @endif
@@ -33,7 +33,7 @@
                         </div>
                         <p type="text" id="weight" name="weight" class="weight form-control form-control-lg custom-form-control margin-bottom " placeholder="Poids">
                             @foreach($recipeingredients as $weight)
-                                {{$weight->weight}}
+                                {{$weight->weight}}<br>
                             @endforeach
                         </p>               
                     </div>

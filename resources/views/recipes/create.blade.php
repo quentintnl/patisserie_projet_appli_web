@@ -5,7 +5,7 @@
 <!-- book a table Section  -->
 <div class="container-fluid has-bg-overlay text-center text-light has-height-lg middle-items" id="book-table">
     <a class="section-title mb-5" href="">AJOUTER UNE PATISSERIE</a>
-    <form  action="{{ route('recipes.store') }}" class="row mb-5" method="POST">
+    <form  action="{{ route('recipes.store') }}" class="row mb-5" method="POST" enctype="multipart/form-data">
         @csrf
         <div class="content_add_pastry">
             <div class="">
@@ -27,7 +27,7 @@
                 <input type="text" id="conservation_council" name="conservation_council" class="form-control form-control-lg custom-form-control conservation margin-bottom frame-width" placeholder="Conseil de conservation">
             </div>
             <div class="">
-                <input type="text" id="photo" name="photo" class="form-control form-control-lg custom-form-control pictures margin-bottom frame-width" placeholder="Photo">
+                <input type="file" id="photo" name="photo" class="form-control form-control-lg custom-form-control pictures margin-bottom frame-width" placeholder="Photo">
             </div>
         </div>
         <button type="submit" class="btn btn-lg btn-primary" id="rounded-btn">Ajouter les ingredients</button>

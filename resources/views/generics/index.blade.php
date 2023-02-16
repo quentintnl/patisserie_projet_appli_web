@@ -18,32 +18,31 @@
     </div>
 </div>
 
-    <!--  gallary Section  -->
     <div id="recipes" class="text-center bg-dark text-light has-height-md middle-items wow fadeIn">
         <a href="{{ route('recipes.index') }}" class="section-title">NOS RECETTES</a>
     </div>
     <div class="gallary row">
         <div class="col-sm-6 col-lg-3 gallary-item wow fadeIn">
             <img src="{{ asset('imgs/gallary-1.jpg') }}" alt="Tarte au pommes" class="gallary-img">
-            <a href="#" class="gallary-overlay">
+            <a href="{{ route('recipes.index') }}" class="gallary-overlay">
                 <i class="gallary-icon ti-plus"></i>
             </a>
         </div>
         <div class="col-sm-6 col-lg-3 gallary-item wow fadeIn">
             <img src="{{ asset('imgs/gallary-2.jpg') }}" alt="Forêt noire" class="gallary-img">
-            <a href="#" class="gallary-overlay">
+            <a href="{{ route('recipes.index') }}" class="gallary-overlay">
                 <i class="gallary-icon ti-plus"></i>
             </a>
         </div>
         <div class="col-sm-6 col-lg-3 gallary-item wow fadeIn">
             <img src="{{ asset('imgs/gallary-3.jpg')}}" alt="Paris-Brest" class="gallary-img">
-            <a href="#" class="gallary-overlay">
+            <a href="{{ route('recipes.index') }}" class="gallary-overlay">
                 <i class="gallary-icon ti-plus"></i>
             </a>
         </div>
         <div class="col-sm-6 col-lg-3 gallary-item wow fadeIn">
             <img src="{{ asset('imgs/gallary-4.jpg') }}" alt="" class="gallary-img">
-            <a href="#" class="gallary-overlay">
+            <a href="{{ route('recipes.index') }}" class="gallary-overlay">
                 <i class="gallary-icon ti-plus"></i>
             </a>
         </div>
@@ -55,25 +54,25 @@
     <div class="gallary row">
         <div class="col-sm-6 col-lg-3 gallary-item wow fadeIn">
             <img src="{{ asset('imgs/gallary-9.jpg') }}" alt="" class="gallary-img">
-            <a href="#" class="gallary-overlay">
+            <a href="{{ route('categories.index') }}" class="gallary-overlay">
                 <i class="gallary-icon ti-plus"></i>
             </a>
         </div>
         <div class="col-sm-6 col-lg-3 gallary-item wow fadeIn">
             <img src="{{ asset('imgs/gallary-10.jpg') }}" alt="" class="gallary-img">
-            <a href="#" class="gallary-overlay">
+            <a href="{{ route('categories.index') }}" class="gallary-overlay">
                 <i class="gallary-icon ti-plus"></i>
             </a>
         </div>
         <div class="col-sm-6 col-lg-3 gallary-item wow fadeIn">
             <img src="{{ asset ('imgs/gallary-11.jpg') }}" alt="" class="gallary-img">
-            <a href="#" class="gallary-overlay">
+            <a href="{{ route('categories.index') }}" class="gallary-overlay">
                 <i class="gallary-icon ti-plus"></i>
             </a>
         </div>
         <div class="col-sm-6 col-lg-3 gallary-item wow fadeIn">
             <img src="{{ asset('imgs/gallary-12.jpg') }}" alt="" class="gallary-img">            
-            <a href="#" class="gallary-overlay">
+            <a href="{{ route('categories.index') }}" class="gallary-overlay">
                 <i class="gallary-icon ti-plus"></i>
             </a>
         </div>
@@ -85,25 +84,25 @@
     <div class="gallary row">
         <div class="col-sm-6 col-lg-3 gallary-item wow fadeIn">
             <img src="{{ asset('imgs/gallary-5.jpg') }}" alt="NOËL" class="gallary-img">
-            <a href="#" class="gallary-overlay">
+            <a href="{{ route('events.index') }}" class="gallary-overlay">
                 <i class="gallary-icon ti-plus"></i>
             </a>
         </div>
         <div class="col-sm-6 col-lg-3 gallary-item wow fadeIn">
             <img src="{{ asset('imgs/gallary-6.jpg') }}" alt="REGIME" class="gallary-img">
-            <a href="#" class="gallary-overlay">
+            <a href="{{ route('events.index') }}" class="gallary-overlay">
                 <i class="gallary-icon ti-plus"></i>
             </a>
         </div>
         <div class="col-sm-6 col-lg-3 gallary-item wow fadeIn">
             <img src="{{ asset('imgs/gallary-7.jpg') }}" alt="AGRUMES" class="gallary-img">
-            <a href="#" class="gallary-overlay">
+            <a href="{{ route('events.index') }}" class="gallary-overlay">
                 <i class="gallary-icon ti-plus"></i>
             </a>
         </div>
         <div class="col-sm-6 col-lg-3 gallary-item wow fadeIn">
             <img src="{{ asset('imgs/gallary-8.jpg') }}" alt="" class="gallary-img">
-            <a href="#" class="gallary-overlay">
+            <a href="{{ route('events.index') }}" class="gallary-overlay">
                 <i class="gallary-icon ti-plus"></i>
             </a>
         </div>

@@ -11,6 +11,21 @@
 
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 */
+
+.has-bg-overlay-show-recipes-img:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url(../imgs/gallary-1.jpg) no-repeat center center fixed;
+  /* background: url('../storage/app/$recipe->photo') no-repeat center center fixed; */
+  background-size: cover;
+  z-index: -1;
+  opacity: .3;
+}
+
 :root {
     --blue: #79A9F5;
     --indigo: #C45F90;
@@ -2309,13 +2324,17 @@
   
   .ingredients_class{
     width: 50%;
-    height: 57.6px;
+    height: 100%;
     border-radius: 10px;
     background-color: transparent;
     color: white;
     text-align: center;
   }
   
+  .ingredients{
+    height: 100%;
+  }
+
   .conservation{
     width: 100%;
   }
@@ -11348,20 +11367,7 @@
   .has-bg-overlay-show-recipes-img {
     position: relative;
   }
-  
-  .has-bg-overlay-show-recipes-img:before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: url(../imgs/gallary-1.jpg) no-repeat center center fixed;
-    background-size: cover;
-    z-index: -1;
-    opacity: .3;
-  }
-  
+
   .has-bg-overlay-show-recipes-img:after {
     content: '';
     position: absolute;
@@ -11488,6 +11494,7 @@
 
   .weight{
     width: 40%;
+    height: 100%;
   }
 
   .margin-top{

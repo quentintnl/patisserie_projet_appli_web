@@ -32,7 +32,7 @@ class RecipesSeeder extends Seeder
                 'cooking_time'=>'25min',
                 'conservation_council'=>'Garder 34h',
                 'nbr_people'=>'6 personne',
-                'photo'=>'titi'
+                'photo'=>'tutu'
             ]);
 
             \DB::table('recipes')->insert([
@@ -42,7 +42,7 @@ class RecipesSeeder extends Seeder
                 'cooking_time'=>'45min',
                 'conservation_council'=>'Garder 44h',
                 'nbr_people'=>'8 personne',
-                'photo'=>'tutu'
+                'photo'=>'titi'
             ]);
 
             \DB::table('recipes')->insert([

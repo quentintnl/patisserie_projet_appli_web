@@ -7,6 +7,11 @@ use Illuminate\Http\Request;
 use App\Models\Recipe;
 use App\Models\Ingredient;
 use App\Models\IngredientRecipe;
+use App\Models\UploadImageController;
+
+use App\Http\Requests\ImageUploadRequest;
+
+use Illuminate\Support\Facades\Storage;
 
 class RecipesController extends Controller
 {
@@ -34,7 +39,14 @@ class RecipesController extends Controller
     $recipe->cooking_time = $request->get('cooking_time');
     $recipe->conservation_council = $request->get('cooking_time');
     $recipe->nbr_people = $request->get('nbr_people');
-    $recipe->photo = $request->get('photo');
+    
+    if ($request->file('photo')) 
+    {
+        $fileName = time().'_'.$request->file('photo')->getClientOriginalName();
+        $filePath = $request->file('photo')->store($fileName);
+        $recipe->photo = $filePath;
+    }
+
     $recipe->save();
 
     return redirect()->route('recipes.createingredient');
@@ -54,8 +66,8 @@ class RecipesController extends Controller
         return view('recipe.edit', compact("ingredient"));
     }
 
-    public function createingredient()
-    {
+    public function createingredient(Request $request)
+    {        
         $ingredients = Ingredient::all();
         $recipes = Recipe::all();
 
@@ -64,11 +76,17 @@ class RecipesController extends Controller
 
     public function storeingredient(Request $request)
     {
+        $weights = $request->input('weight');
+        $ingredientIds = $request->input('ingredient_id');
+        $recipeId = $request->input('recipe_id');
+        
+        for ($i = 0; $i < count($weights); $i++) {
             $ingredientsrecipe = new IngredientRecipe();
-            $ingredientsrecipe->weight = $request->get('weight');
-            $ingredientsrecipe->ingredient_id = $request->get('ingredient_id');
-            $ingredientsrecipe->recipe_id = $request->get('recipe_id');
+            $ingredientsrecipe->weight = $weights[$i];
+            $ingredientsrecipe->ingredient_id = $ingredientIds[$i];
+            $ingredientsrecipe->recipe_id = $recipeId;
             $ingredientsrecipe->save();
+        }
 
         return redirect()->route ("recipes.index");
     }
