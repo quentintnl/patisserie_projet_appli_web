@@ -15,9 +15,9 @@ class Recipe extends Model
         'name', 'manufacturing_process', 'preparation_time', 'cooking_time', 'conservation_council', 'nbr_people','photo'
     ];
 
-    public function ingredientsrecipes()
+    public function ingredients_recipes()
     {
-        return $this->belongsToMany(IngredientRecipe::class);
+        return $this->hasMany(IngredientRecipe::class, 'recipe_id');
     }
 
     public function categtoriesrecipes()

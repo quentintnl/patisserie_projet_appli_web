@@ -22,6 +22,8 @@
                     </tr>
                 @endforeach
             </table>
+
+    <a class="add-ingredients" href="{{ route('events.create')}}">Ajouter un type d'événement</a>
     </div>
 
 @endsection

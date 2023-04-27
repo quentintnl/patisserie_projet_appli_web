@@ -25,6 +25,5 @@ class IngredientRecipe extends Model
         return $this->belongsTo(Recipe::class, "recipe_id");
     }
 
-
 }
 

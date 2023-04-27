@@ -9,7 +9,7 @@
                 @method('PUT')
                 @csrf
                 <label class="add-txt" for="name">Ingredient : </label>
-                <input class="add-input" type="text" id="name" name="name" value="{{ $ingredient->name }}">
+                <input class="add-input" type="text" id="name" name="name" required value="{{ $ingredient->name }}">
                 <button class="add" type="submit">Modifier l'ingrédient !</button>
             </form>
         </div>

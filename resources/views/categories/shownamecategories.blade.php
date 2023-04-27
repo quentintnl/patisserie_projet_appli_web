@@ -22,6 +22,7 @@
                     </tr>
                 @endforeach
             </table>
+        <a class="add-category" href="{{ route('categories.create')}}">Ajouter une catégorie</a>
     </div>
 
 @endsection

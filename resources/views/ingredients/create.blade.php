@@ -8,7 +8,7 @@
             <form action="{{ route('ingredients.store') }}" method="POST">
                 @csrf
                 <label for="name" class="add-txt">Ingrédient : </label>
-                <input class="add-input" type="text" id="name" name="name">
+                <input class="add-input" type="text" id="name" name="name" required>
                 <button class="add" type="submit">Ajouter l'ingrédient !</button>
             </form>
         </div>

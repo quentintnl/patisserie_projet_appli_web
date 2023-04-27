@@ -13,7 +13,7 @@
                             <option value="{{ $ingredient->id }}">{{ $ingredient->name }}</option>
                         @endforeach
                     </select>
-                    <input type="text" id="weight" name="weight[]" class="choose-size" placeholder="Poids">
+                    <input type="text" id="weight" name="weight[]" class="choose-size" placeholder="Poids" required>
                 </div>
             </div>
             <div class="display-flex margin-bottom">

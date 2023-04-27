@@ -11,14 +11,6 @@ use App\Http\Controllers\IngredientsRecipesController;
 
 use App\Http\Requests\ImageUploadRequest;
 
-
-
-
-
-
-
-
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -37,9 +29,16 @@ Route::get('/toutes-les-recettes', [RecipesController::class, 'index'])->name("r
 Route::get('/la-recette/{id}', [RecipesController::class, 'show'])->name("recipes.show");
 Route::get('/ajouter-une-recette', [RecipesController::class, 'create'])->name("recipes.create");
 Route::post('/ajouter-une-recettte', [RecipesController::class, 'store'])->name("recipes.store");
-Route::get('/recette/{id}/edit', [RecipesController::class, 'edit'])->name("recipes.edit");
+// Route::get('/recette/{id}/edit', [RecipesController::class, 'edit'])->name("recipes.edit");
 Route::get('/ajouter-des-ingredients-a-la-recette', [RecipesController::class, 'createingredient'])->name("recipes.createingredient");
 Route::post('/ajout-des-ingredient', [RecipesController::class, 'storeingredient'])->name("recipes.storeingredient");
+Route::get('/recette{id}/edit', [RecipesController::class, 'edit'])->name("recipes.edit");
+Route::post('/modifier-la-recette/{id}', [RecipesController::class, 'update'])->name("recipes.update");
+
+
+Route::get('/ingredient-de-la-recette/{id}/edit', [RecipesController::class, 'edit_ingredient'])->name("recipes.edit_ingredient");
+Route::post('/modifier-les-ingredients/{id}', [RecipesController::class, 'update_ingredient'])->name("recipes.update_ingredient");
+
 
 Route::get('/types-de-patisserie', [CategoriesController::class, 'index'])->name("categories.index");
 Route::get('/categorie/{id}', [CategoriesController::class, 'show'])->name("categories.show");
@@ -48,6 +47,7 @@ Route::get('/ajouter-une-categorie', [CategoriesController::class, 'create'])->n
 Route::post('/ajouter-la-categorie', [CategoriesController::class, 'store'])->name("categories.store");
 Route::get('/toutes-les-categories', [CategoriesController::class, 'shownamecategories'])->name("categories.shownamecategories");
 Route::delete('/toutes-les-catégories', [CategoriesController::class, 'destroy'])->name("categories.destroy");
+
 Route::get('/categorie{id}/edit', [CategoriesController::class, 'edit'])->name("categories.edit");
 Route::put('/categorie/{id}', [CategoriesController::class, 'update'])->name("categories.update");
 

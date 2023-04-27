@@ -59,13 +59,6 @@ class RecipesController extends Controller
         return view('recipes.show', compact("recipeingredients"));
     }
 
-    public function edit($id)
-    {
-        $ingredients = Ingredient::find($id);
-
-        return view('recipe.edit', compact("ingredient"));
-    }
-
     public function createingredient(Request $request)
     {        
         $ingredients = Ingredient::all();
@@ -89,5 +82,53 @@ class RecipesController extends Controller
         }
 
         return redirect()->route ("recipes.index");
+    }
+
+    public function edit($id)
+    {
+        $recipe = Recipe::find($id);
+
+        return view('recipes.edit', compact('recipe'));
+    }
+
+    public function update(Request $request, $id)
+    {
+        $recipe = Recipe::find($id);
+        $recipe->name = $request->get('name');
+        $recipe->manufacturing_process = $request->get('manufacturing_process');
+        $recipe->preparation_time = $request->get('preparation_time');
+        $recipe->cooking_time = $request->get('cooking_time');
+        $recipe->conservation_council = $request->get('cooking_time');
+        $recipe->nbr_people = $request->get('nbr_people');
+        $recipe->save();
+
+        return redirect()->route("recipes.edit_ingredient", ['id' => $id]);
+    }
+
+    public function edit_ingredient($id)
+    {
+        $recipe = Recipe::findOrFail($id);
+        $ingredients = Ingredient::all();
+        $ingredients_recipes = $recipe->ingredients_recipes()->with('ingredient')->get();
+    
+        return view('recipes.edit_ingredient', compact('recipe', 'ingredients', 'ingredients_recipes'));
+    }
+    
+    public function update_ingredient(Request $request, $id)
+    {
+        $recipe = Recipe::findOrFail($id);
+        $recipe->ingredients_recipes()->delete();
+    
+        $weights = $request->get('weight');
+        $ingredientIds = $request->get('ingredient_id');
+    
+        for ($i = 0; $i < count($weights); $i++) {
+            $ingredientsrecipe = new IngredientRecipe();
+            $ingredientsrecipe->weight = $weights[$i];
+            $ingredientsrecipe->ingredient_id = $ingredientIds[$i];
+            $recipe->ingredients_recipes()->save($ingredientsrecipe);
+        }
+    
+        return redirect()->route('recipes.show', ['id' => $recipe->id]);
     }
 }
