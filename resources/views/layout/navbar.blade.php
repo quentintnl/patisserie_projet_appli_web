@@ -34,7 +34,7 @@
                     <a class="nav-link" href="{{ route('generics.index') }}">Contacter nous</a>
                 </li>
                 <li class="nav-item">
-                    <a href="" class="btn btn-primary ml-xl-4">Connexion</a>
+                    {{-- <a href="" class="btn btn-primary ml-xl-4">Connexion</a> --}}
                 </li>
             </ul>
         </div>

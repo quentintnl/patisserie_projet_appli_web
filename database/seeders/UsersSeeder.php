@@ -18,7 +18,7 @@ class UsersSeeder extends Seeder
             'name'=>'DUPOND',
             'email'=>\Str::random(12) . '@gmail.com',
             'password' => bcrypt('123456'),
-            'user_type'=>'1'
+            // 'user_type'=>'1'
         ]);
     }
 }
