@@ -33,9 +33,20 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('generics.index') }}">Contacter nous</a>
                 </li>
-                <li class="nav-item">
-                    {{-- <a href="" class="btn btn-primary ml-xl-4">Connexion</a> --}}
-                </li>
+                <div class="dropdown ml-auto">
+                    <a class="btn dropdown-toggle" href="#" role="button" id="userDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        {{ Auth::user()->name }}
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="userDropdown">
+                        {{-- <a class="dropdown-item" href="#">Mon compte</a> --}}
+                        <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                            Déconnexion
+                        </a>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                            @csrf
+                        </form>
+                    </div>
+                </div>
             </ul>
         </div>
     </nav>

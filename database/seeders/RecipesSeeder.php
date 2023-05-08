@@ -17,6 +17,7 @@ class RecipesSeeder extends Seeder
 
             \DB::table('recipes')->insert([
                 'name'=>'Choux',
+                // 'user_id'=>'1',
                 'manufacturing_process'=>'Congeler',
                 'preparation_time'=>'20min',
                 'cooking_time'=>'15min',
@@ -27,6 +28,7 @@ class RecipesSeeder extends Seeder
 
             \DB::table('recipes')->insert([
                 'name'=>'Fraise',
+                // 'user_id'=>'1',
                 'manufacturing_process'=>'Couper',
                 'preparation_time'=>'30min',
                 'cooking_time'=>'25min',
@@ -37,6 +39,7 @@ class RecipesSeeder extends Seeder
 
             \DB::table('recipes')->insert([
                 'name'=>'Tomate',
+                // 'user_id'=>'1',
                 'manufacturing_process'=>'Cuire',
                 'preparation_time'=>'40min',
                 'cooking_time'=>'45min',
@@ -47,6 +50,7 @@ class RecipesSeeder extends Seeder
 
             \DB::table('recipes')->insert([
                 'name'=>'Pomme',
+                // 'user_id'=>'1',  
                 'manufacturing_process'=>'Bouillir',
                 'preparation_time'=>'50min',
                 'cooking_time'=>'55min',

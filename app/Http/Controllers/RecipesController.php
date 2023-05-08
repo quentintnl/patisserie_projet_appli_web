@@ -37,6 +37,7 @@ class RecipesController extends Controller
 
     public function store(Request $request)
     {
+    $user = auth()->user();
     $recipe = new Recipe;
     $recipe->name = $request->get('name');
     $recipe->manufacturing_process = $request->get('manufacturing_process');
@@ -52,7 +53,7 @@ class RecipesController extends Controller
         $recipe->photo = $filePath;
     }
 
-    $recipe->save();
+    $user->recipe()->save($recipe);
 
     return redirect()->route('recipes.createingredient');
     }

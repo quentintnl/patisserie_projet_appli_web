@@ -48,6 +48,10 @@ Route::middleware('auth')->group(function () {
     Route::get('/recette{id}/edit', [RecipesController::class, 'edit'])->name("recipes.edit");
     Route::post('/modifier-la-recette/{id}', [RecipesController::class, 'update'])->name("recipes.update");
     Route::delete('/supression-de-la-recette', [RecipesController::class, 'destroy'])->name("recipes.destroy");
+    
+    // Route::delete('/supression-de-la-recette', [RecipesController::class, 'destroy'])
+    // ->name('recipes.destroy')
+    // ->middleware('can.delete.recipe');
 
 
     Route::get('/ingredient-de-la-recette/{id}/edit', [RecipesController::class, 'edit_ingredient'])->name("recipes.edit_ingredient");
