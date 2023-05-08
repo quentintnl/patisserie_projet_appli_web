@@ -3,11 +3,16 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 use App\Models\Recipe;
 use App\Models\Ingredient;
 use App\Models\IngredientRecipe;
 use App\Models\UploadImageController;
+use App\Models\EventRecipe;
+use App\Models\Event;
+use App\Models\CategoryRecipe;
+use App\Models\Category;
 
 use App\Http\Requests\ImageUploadRequest;
 
@@ -63,8 +68,10 @@ class RecipesController extends Controller
     {        
         $ingredients = Ingredient::all();
         $recipes = Recipe::all();
+        $events = Event::all();
+        $categories = Category::all();
 
-        return view('recipes.createingredient', compact("ingredients", "recipes"));
+        return view('recipes.createingredient', compact("ingredients", "recipes", "events", "categories"));
     }
 
     public function storeingredient(Request $request)
@@ -72,7 +79,15 @@ class RecipesController extends Controller
         $weights = $request->input('weight');
         $ingredientIds = $request->input('ingredient_id');
         $recipeId = $request->input('recipe_id');
-        
+
+        // $recipeId = $request->input('recipe_id');
+        $event = new EventRecipe();
+        $event->event_id = $request->input('event');
+        $event->recipe_id = $recipeId;
+        $category = new CategoryRecipe();
+        $category->category_id = $request->input('category');
+        $category->recipe_id = $recipeId;
+
         for ($i = 0; $i < count($weights); $i++) {
             $ingredientsrecipe = new IngredientRecipe();
             $ingredientsrecipe->weight = $weights[$i];
@@ -80,6 +95,8 @@ class RecipesController extends Controller
             $ingredientsrecipe->recipe_id = $recipeId;
             $ingredientsrecipe->save();
         }
+        $event->save();
+        $category->save();
 
         return redirect()->route ("recipes.index");
     }
@@ -131,4 +148,21 @@ class RecipesController extends Controller
     
         return redirect()->route('recipes.show', ['id' => $recipe->id]);
     }
+
+    
+    public function destroy(Request $request)
+    {
+        $id = $request->input('id');
+
+        // Supprime les clé etrangere pour cette recette
+        DB::table('categories_recipes')->where('recipe_id', $id)->delete();
+        DB::table('events_recipes')->where('recipe_id', $id)->delete();
+        DB::table('ingredients_recipes')->where('recipe_id', $id)->delete();
+
+        $recipe = Recipe::findOrFail($id);
+        $recipe->delete();
+        
+        return redirect()->route('recipes.index')->with('success', 'La recette a été supprimée avec succès.');
+    }
+
 }

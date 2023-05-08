@@ -4,6 +4,7 @@
 
 <div class="container-fluid has-bg-overlay text-center text-light has-height-lg middle-items" id="book-table">
     <a class="section-title mb-5" href="">AJOUTER UNE PATISSERIE</a>
+    <a class=" w-75 m-auto">N'oublier pas de vérifier que TOUS vos ingredients, type de pâtisserie et évènements ont été ajouter dans les rubrique "ingrédients","type de pâtisserie" et "évènements" de la barre de navigation</a>
     <form  action="{{ route('recipes.store') }}" class="row mb-5" method="POST" enctype="multipart/form-data">
         @csrf
         <div class="content_add_pastry">

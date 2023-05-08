@@ -47,6 +47,8 @@ Route::middleware('auth')->group(function () {
     Route::post('/ajout-des-ingredient', [RecipesController::class, 'storeingredient'])->name("recipes.storeingredient");
     Route::get('/recette{id}/edit', [RecipesController::class, 'edit'])->name("recipes.edit");
     Route::post('/modifier-la-recette/{id}', [RecipesController::class, 'update'])->name("recipes.update");
+    Route::delete('/supression-de-la-recette', [RecipesController::class, 'destroy'])->name("recipes.destroy");
+
 
     Route::get('/ingredient-de-la-recette/{id}/edit', [RecipesController::class, 'edit_ingredient'])->name("recipes.edit_ingredient");
     Route::post('/modifier-les-ingredients/{id}', [RecipesController::class, 'update_ingredient'])->name("recipes.update_ingredient");

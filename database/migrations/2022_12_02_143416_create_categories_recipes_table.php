@@ -19,6 +19,7 @@ return new class extends Migration
     
             $table->unsignedBigInteger('recipe_id');
             $table->foreign('recipe_id')->references('id')->on('recipes');
+            $table->timestamps();
         });
     }
 

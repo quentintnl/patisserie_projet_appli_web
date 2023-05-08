@@ -13,7 +13,6 @@
                 <i class="gallary-icon ti-plus"></i>
             </a>
     </div>
-        @endforeach
-    </div>
+@endforeach
 
 @endsection

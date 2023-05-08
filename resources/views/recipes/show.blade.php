@@ -56,8 +56,45 @@
         </div>
     </div>
     <td class="size-table">
-        <a href="{{ route('recipes.edit', $recipeingredient->recipe->id) }}" class="btn-ingredient update"> Modifier</a>
+        <a href="{{ route('recipes.edit', $recipeingredient->recipe->id) }}" class="btn-ingredient update" style="text-align: center"> Modifier</a>
     </td>
+    <td class="size-table">
+        <form id="delete-form" action="{{ route('recipes.destroy', ['id' => $recipeingredient->recipe->id]) }}" method="POST">
+            @method('delete')
+            @csrf
+            <input type="hidden" name="id" value="{{ $recipeingredient->recipe->id }}">
+            <button class="btn-ingredient" type="button" style="margin-top: 1em;" onclick="showConfirmModal()">Supprimer</button>
+        </form>
+    </td>
+    <div class="modal fade" id="confirmModal" tabindex="-1" role="dialog" aria-labelledby="confirmModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title text-dark" id="confirmModalLabel">Confirmation de suppression</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body text-secondary">
+                    Êtes-vous sûr de vouloir supprimer cette recette ?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Annuler</button>
+                    <button type="button" class="btn btn-danger" onclick="deleteRecipe()">Confirmer</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        function showConfirmModal() {
+            $('#confirmModal').modal('show');
+        }
+        
+        function deleteRecipe() {
+            $('#delete-form').submit();
+        }
+    </script>
+    
     @endforeach
 
 @endsection
